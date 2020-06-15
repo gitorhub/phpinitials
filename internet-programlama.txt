@@ -1,0 +1,16 @@
+2019-2020 EĞİTİM ÖĞRETİM YILI BAHAR DÖNEMİ INTERNET PROGRAMLAMA DERSİ FİNAL SORULARI
+
+⦁	“Personel” adlı MySQL veritabanında aşağıdaki tablonun bulunduğunu varsayalım:
+PerTablo [Personel_No (auto-int), Adı (str), Soyadı (str), Kadro_Birimi (str), Başlama_Tarihi (date), Çalışma_Süresi (int) ]
+Bu tabloya, aşağıdaki kurallara göre veri girişi gerçekleştirecek
+⦁	Formu oluşturunuz (30 Puan).
+⦁	Kayıt yapacak PHP kodunu yazınız (35 Puan).
+Kurallar:
+⦁	Kadro birimi şu seçeneklerden birisi olarak belirlenecektir: Teknik Hizmetler, İdari Hizmetler, Eğitim Hizmetleri, Dış İlişkiler, Halkla İlişkiler.
+⦁	Personel numarası kullanıcı tarafından verilmeyecek, personelin kadro birimine göre şu şekilde oluşturulacaktır: Kadro biriminin ilk üç harfi + o kadrodaki personel numarası. Örneğin Teknik Hizmetler birimine ilk kayıt olan personelin “Personel_No” değeri TEK001, ikincisi TEK002 olacaktır. Ya da Halkla İlişkiler birimine daha önceden kayıtlı 21 personel varsa, şu an kaydolan HAL022 olarak numaralandırılacaktır.
+⦁	Çalışma_Süresi, personelin giriş yılı esas alınarak otomatik olarak hesaplanacaktır.
+Sonuç olarak Personel_No ve Çalışma_Süresi alanlarına girilecek bilgi program tarafından otomatik olarak oluşturulacak, diğer alanlara ise kullanıcı tarafından bilgi girişi yapılacaktır.
+
+⦁	“Trigonometri” adlı MySQL veritabanında aşağıdaki tablonun bulunduğunu varsayalım:
+DeğerTablo [Açı (int), Sinüs (float), Kosinüs (float)]
+0 derece ile 360 derece arasındaki bütün açıların sinüs ve kosinüs değerlerini bu tabloya dolduracak Php kodunu yazınız (35 Puan).

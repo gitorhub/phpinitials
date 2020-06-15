@@ -1,0 +1,1 @@
+<?php header("location:1-Personel")  ?>
