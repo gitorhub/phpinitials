@@ -26,8 +26,8 @@
                 $sql="SELECT * FROM DeğerTablo";
                 $sql_result=mysqli_query($conn, $sql);
                 if(mysqli_num_rows($sql_result)>360){
-					echo '<form action="index.php" method="post">
-						  <input type="submit" value="Veri Tabanına Aktar" class="btn btn-info form-control" name="trigonometri-aktar" disabled>
+					echo '<form>
+						  <input type="button" value="Veri Tabanına Aktar" class="btn btn-info form-control" name="trigonometri-aktar" disabled>
 						</form>';
 					echo '<div class="alert alert-info text-center" role="alert">
 							Sayılar veritabanına aktarılmış. Verileri çekebilirsiniz.

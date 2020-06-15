@@ -121,7 +121,7 @@ $sql_add_result=mysqli_query($conn, $sql_add);
         <th class="col text-center bg-success text-white">Kadro Birimi</th>
         <th class="col text-center bg-warning text-white">Başlama Tarihi</th>
         <th class="col text-center bg-primary text-white">Çalışma Süresi</th>
-        <th class="col text-center bg-danger text-white">Sırayı Sil</th>
+        <th class="col text-center bg-danger text-white">İşlem</th>
 
       </tr>
     </thead>
