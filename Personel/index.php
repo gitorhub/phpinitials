@@ -109,7 +109,7 @@ $sql_add_result=mysqli_query($conn, $sql_add);
       </div>
 
       <div class="form-group">
-        <input type="submit" class="btn btn-warning form-control" name="Personel_Submit" value="Veri Tabanına Ekle">
+        <input type="submit" class="btn btn-warning form-control" name="Personel_Submit" value="Ekle">
       </div>
     </form>
 

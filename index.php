@@ -1,1 +1,1 @@
-<?php header("location:1-Personel")  ?>
+<?php header("location:Personel")  ?>

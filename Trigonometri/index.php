@@ -80,11 +80,11 @@
     <div class="d-flex justify-content-center">
       
     <div class="col-8 text-center">
-    <div class="d-flex">
-            <div class="col text-info h1"> Açı</div>
+		<div class="d-flex">
+          <div class="col text-info h1"> Açı</div>
           <div class="col text-warning h1"> Sinüs</div>
           <div class="col text-primary h1"> Kosinüs </div>
-            </div>
+    </div>
       <?php 
       if(isset($_POST['trigonometri-çek'])){
         $sql="SELECT * FROM DeğerTablo";
@@ -103,7 +103,7 @@
         </li>
       </ul>
 
-      <?php }header("location:index.php"); } ?>
+      <?php } } ?>
     </div>
 
     </div>
