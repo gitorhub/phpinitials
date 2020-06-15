@@ -66,7 +66,7 @@ $sql_add_result=mysqli_query($conn, $sql_add);
   <title>Personel Veritabanı</title>
   <style>
     .bg-muhsin{
-      background:linear-gradient(to right, white, #13aff0, #13aff0,#13aff0,white);
+      background:linear-gradient(to right, white, #13aff0,white);
     }
   </style>
 
@@ -76,9 +76,7 @@ $sql_add_result=mysqli_query($conn, $sql_add);
   <div class="container">
 
   <div class="col-12">
-      <h2 class="text-center text-muted">İnternet Programlama Final Soru-1</h2>
-
-
+      <h2 class="text-center text-muted p-2">İnternet Programlama Final Soru-1</h2>
     </div>
   </div>
   <div class="container bg-muhsin d-flex justify-content-center mb-5">
