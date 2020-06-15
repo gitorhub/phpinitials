@@ -16,7 +16,7 @@
 
   <div class="container">
     <div class="col-12">
-      <h2 class="text-center text-muted">İnternet Programlama Final Soru-2</h2>
+      <h2 class="text-center text-muted p-2">İnternet Programlama Final Soru-2</h2>
 
     </div>
 
@@ -26,11 +26,17 @@
                 $sql="SELECT * FROM DeğerTablo";
                 $sql_result=mysqli_query($conn, $sql);
                 if(mysqli_num_rows($sql_result)>360){
-                  echo '<div class="alert alert-info text-center" role="alert">
-                  Sayılar veritabanına aktarılmış. Verileri çekebilirsiniz.
-                </div>';    
+					echo '<form action="index.php" method="post">
+						  <input type="submit" value="Veri Tabanına Aktar" class="btn btn-info form-control" name="trigonometri-aktar" disabled>
+						</form>';
+					echo '<div class="alert alert-info text-center" role="alert">
+							Sayılar veritabanına aktarılmış. Verileri çekebilirsiniz.
+						  </div>';    
                 }else{
-                  echo ' <div class="alert alert-info text-center" role="alert">
+					echo '<form action="index.php" method="post">
+						  <input type="submit" value="Veri Tabanına Aktar" class="btn btn-info form-control" name="trigonometri-aktar">
+						</form>';
+					echo ' <div class="alert alert-info text-center" role="alert">
                   0 İle 360 arasındaki sayıları, sayıların sinüs ve kosinüslerini veri tabanına aktar.
                 </div>';
                   if(isset($_POST['trigonometri-aktar'])){
@@ -48,28 +54,24 @@
                 }
 
               ?>
-        <form action="index.php" method="post">
-          <input type="submit" value="Veri Tabanına Aktar" class="btn btn-info form-control"
-            name="trigonometri-aktar">
-        </form>
       </div>
 
       <div class="col-4">
-        <div class="alert alert-success text-center" role="alert">
-          0 İle 360 arasındaki sayıları, sayıların sinüs ve kosinüslerini veri tabanından çeker.
-        </div>
         <form action="index.php" method="post">
           <input type="submit" value="Veri Tabanından Çek" class="btn btn-success form-control" name="trigonometri-çek">
         </form>
+        <div class="alert alert-success text-center" role="alert">
+          0 İle 360 arasındaki sayıları, sayıların sinüs ve kosinüslerini veri tabanından çeker.
+        </div>
       </div>
 
       <div class="col-4">
-        <div class="alert alert-danger text-center" role="alert">
-          Veritabanında bulunan tüm verileri siler
-        </div>
         <form action="index.php" method="post">
           <input type="submit" value="Veri Tabanını Temizle" class="btn btn-danger form-control" name="trigonometri-sil">
         </form>
+        <div class="alert alert-danger text-center" role="alert">
+          Veritabanında bulunan tüm verileri siler
+        </div>
       </div>
 
     </div>
