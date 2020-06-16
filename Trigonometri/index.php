@@ -37,7 +37,7 @@
 						  <input type="submit" value="Veri Tabanına Aktar" class="btn btn-info form-control" name="trigonometri-aktar">
 						</form>';
 					echo ' <div class="alert alert-info text-center" role="alert">
-                  0 İle 360 arasındaki sayıları, sayıların sinüs ve kosinüslerini veri tabanına aktar.
+                  0 İle 360 arasındaki sayıları, sayıların sinüs ve kosinüslerini veri tabanına aktarabilirsiniz.
                 </div>';
                   if(isset($_POST['trigonometri-aktar'])){
                   for($i=0; $i<=360; $i++){
@@ -57,22 +57,50 @@
       </div>
 
       <div class="col-4">
-        <form action="index.php" method="post">
-          <input type="submit" value="Veri Tabanından Çek" class="btn btn-success form-control" name="trigonometri-çek">
+      <?php 
+            $sql="SELECT * FROM DeğerTablo";
+            $sql_result=mysqli_query($conn, $sql);
+            if(mysqli_num_rows($sql_result)<360){
+        echo '<form action="index.php" method="post">
+          <input type="submit" value="Veri Tabanından Çek" class="btn btn-success form-control" name="trigonometri-çek" disabled>
         </form>
         <div class="alert alert-success text-center" role="alert">
-          0 İle 360 arasındaki sayıları, sayıların sinüs ve kosinüslerini veri tabanından çeker.
-        </div>
+          Verilerin tamamı henüz veri tabanına aktarılmamış.
+        </div>';
+        }else{ 
+          echo '<form action="index.php" method="post">
+          <input type="submit" value="Veri Tabanından Çek" class="btn btn-success form-control" name="trigonometri-çek" >
+        </form>
+        <div class="alert alert-success text-center" role="alert">
+          0 İle 360 arasındaki sayıları, sayıların sinüs ve kosinüslerini veri tabanından çekebilirsiniz..
+        </div>';
+       } ?>
+
+
       </div>
 
       <div class="col-4">
-        <form action="index.php" method="post">
-          <input type="submit" value="Veri Tabanını Temizle" class="btn btn-danger form-control" name="trigonometri-sil">
+      <?php 
+            $sql="SELECT * FROM DeğerTablo";
+            $sql_result=mysqli_query($conn, $sql);
+            if(mysqli_num_rows($sql_result)<1){
+        echo '<form action="index.php" method="post">
+          <input type="submit" value="Veri Tabanını Temizle" class="btn btn-danger form-control" name="trigonometri-sil" disabled>
         </form>
         <div class="alert alert-danger text-center" role="alert">
-          Veritabanında bulunan tüm verileri siler
-        </div>
+          Veritabanında henüz veri bulunmamaktadır
+        </div>';
+            }else{
+              echo '<form action="index.php" method="post">
+              <input type="submit" value="Veri Tabanını Temizle" class="btn btn-danger form-control" name="trigonometri-sil">
+            </form>
+            <div class="alert alert-danger text-center" role="alert">
+              Veritabanında bulunan tüm verileri silebilrisiniz.
+            </div>';
+
+            }?>
       </div>
+
 
     </div>
 

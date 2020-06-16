@@ -2,6 +2,7 @@
 <?php include "../navbar.php" ;?>
 
 
+
 <?php 
   if(isset($_POST['submit_del'])){
     $Personel_No_del=$_POST['del_data'];
@@ -66,13 +67,14 @@ $sql_add_result=mysqli_query($conn, $sql_add);
   <title>Personel Veritabanı</title>
   <style>
     .bg-muhsin{
-      background:linear-gradient(to right, white, #13aff0,white);
+      background:linear-gradient(to right, white,white, #13aff0,white,white);
     }
+
   </style>
 
 </head>
 
-<body>
+<body >
   <div class="container">
 
   <div class="col-12">
@@ -92,8 +94,8 @@ $sql_add_result=mysqli_query($conn, $sql_add);
       </div>
       <div class="form-group">
         <label for="Kadro_Birimi">Kadro Birimi</label>
-        <select class="custom-select" name="Kadro_Birimi" id="Kadro_Birimi" >
-          <option selected disabled> (Kadro Birimi Seçiniz)</option>
+        <select class="custom-select" name="Kadro_Birimi" id="Kadro_Birimi">
+          <!-- <option selected disabled> (Kadro Birimi Seçiniz)</option> -->
           <option>Teknik Hizmetler</option>
           <option>İdari Hizmetler</option>
           <option>Eğitim Hizmetleri</option>
@@ -103,7 +105,7 @@ $sql_add_result=mysqli_query($conn, $sql_add);
       </div>
       <div class="form-group">
         <label for="Başlama_Tarihi">Başlama Tarihi</label>
-        <input type="date" class="form-control" name="Başlama_Tarihi" id="Başlama_Tarihi" >
+        <input type="date" class="form-control" name="Başlama_Tarihi" id="Başlama_Tarihi" value="<?php echo date('Y-m-d') ?>">
       </div>
 
       <div class="form-group">
@@ -134,8 +136,11 @@ $sql_add_result=mysqli_query($conn, $sql_add);
       $Soyadı=$row["Soyadı"];
       $Kadro_Birimi=$row["Kadro_Birimi"];
       $Başlama_Tarihi=$row["Başlama_Tarihi"];
-      $Çalışma_Süresi=$row["Çalışma_Süresi"];
+      $Başlama_Tarihi_Formatli=date('d - m - Y', strtotime($Başlama_Tarihi));
 
+
+      $Çalışma_Süresi=$row["Çalışma_Süresi"];
+ 
         ?>
 
     <tbody>
@@ -144,7 +149,7 @@ $sql_add_result=mysqli_query($conn, $sql_add);
         <td class="col text-center text-info border"><?php echo htmlspecialchars($Adı); ?></td>
         <td class="col text-center text-secondary border"><?php echo htmlspecialchars($Soyadı); ?></td>
         <td class="col text-center text-success border"><?php echo htmlspecialchars($Kadro_Birimi); ?></td>
-        <td class="col text-center text-warning border"><?php echo htmlspecialchars($Başlama_Tarihi); ?></td>
+        <td class="col text-center text-warning border"><?php echo htmlspecialchars($Başlama_Tarihi_Formatli); ?></td>
         <td class="col text-center text-primary border"><?php echo htmlspecialchars($Çalışma_Süresi); ?></td>
         <td class="col text-center text-danger border">
           <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post">
